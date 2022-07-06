@@ -1,0 +1,223 @@
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+}
+
+html,body{
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --dark-blue: rgb(2, 5, 20);
+    --transparent-blue:rgba(2, 5, 20, 0.658);
+    --red: red;
+     
+        --text: #301400;
+        --main: #ff8f00;
+        --main-light:#ffb300;
+        --main-lighter:#ffdb89;
+        --main-dark: #ff6f00;
+        --main-darker:#301400;
+        --main-highlight: #f8f5f1;
+        --background-grey: #f9f9f9;
+        --border: #eac4df;
+        --border-dark: #d2cabd;
+        --text-light:#6a544e;
+        --grey-lighter: #fbfbfb;
+        --grey-light: #eee;
+        --grey-dark: #999;
+        --grey: #ddd;
+        --grey-darker: #666;
+}
+
+/* navbar */
+#navbar{
+    display:grid;
+    grid-template-columns: 40% 60%;
+    position: fixed;
+    width: 100%;
+    background-color: var(--transparent-blue);
+}
+#navbar #brand{
+    text-decoration: none;
+    color: #fff;
+    align-self: center;
+    padding-left: 1.5rem;
+    display:inline-block;
+    font-weight: bold;
+    font-size:1.4rem;
+}
+#navbar #menu{
+    background-color: var(--red);
+    justify-self: end;
+    
+}
+#navbar #menu ul{
+    list-style-type: none;
+}
+#navbar #menu li{
+    display:inline-block;
+}
+
+#navbar #menu a{
+    display:block;
+    padding: 1rem;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+#navbar #menu a:hover {
+    background-color: var(--main-dark);
+}
+
+
+/* welcome section */
+#welcome-section{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 8rem 1.5rem 0; 
+}
+#welcome-section #image img{
+    width: 100%;  
+}
+
+#welcome-section #meta h1{
+    font-size: 2rem;
+}
+#welcome-section #meta p{
+    margin-top: 1rem;
+    line-height: 1.8rem;
+    font-size: 1.125rem;
+}
+/* project section */
+#projects{
+    background-color: var(--grey-light);
+    padding: 2rem 0;
+}
+#projects h2{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+#projects-container{
+
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+} 
+
+.project-tile{
+    width: 250px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 1rem 0.4rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    box-shadow: 1px 2px 1px 2px rgba(0, 0, 0, .2);
+    
+}
+.project-tile a{
+    text-decoration: none;
+    display:block;
+    text-align:center;
+    padding: 0 0.4rem;
+    margin: 0 auto;
+    color: var(--text);
+    font-weight: bold;
+        
+}
+.project-tile a:hover{
+    
+    color: var(--text-light);
+}
+.project-tile h3{
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.project-image{
+width: 100%;
+margin-bottom: 1.4rem;
+height: 300px;
+object-fit: contain;
+object-position: top top;
+}
+
+/* footer styles */
+footer{
+    padding: 2rem 1rem 5px;
+}
+#footer-meta{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    justify-items: center;
+}
+.footer-column p{
+    line-height: 1.4rem;
+}
+.footer-column ul{
+    list-style-type: none;
+}
+footer a{
+    padding: 0.2rem 0;
+    display: inline-block;
+    text-decoration: none;
+    color: var(--transparent-blue);
+    border-bottom: 1px dashed var(--text-light);
+}
+footer h4{
+    margin-bottom: 0.5rem;
+}
+footer a:hover{
+    color: var(--dark-blue);
+    border-bottom: 2px solid  var(--red);
+}
+footer #copy{
+    margin-top: 2rem;
+    text-align: center;
+}
+
+/* media queries */
+@media screen and (max-width: 768px){
+    #navbar #brand, #navbar #menu{
+        grid-column: span 2;
+        justify-self: inherit;
+    }
+    #navbar{
+        justify-items: center;
+        position: static;
+    }
+    #navbar #brand{
+        padding: 1rem 0;
+    }
+    #welcome-section{
+        padding: 4rem 2rem;
+        height: auto;
+        background-color: var(--dark-blue);
+    }
+    #welcome-section #image{
+        display: none;
+    }
+    #welcome-section #meta{
+        padding: 0;
+        grid-column: span 2;
+        color: #fff;
+        text-align:center;
+    }
+    
+    #footer-meta{
+        display: block;
+        text-align: center;
+    }
+    .footer-column{
+        margin-bottom: 1.5rem;
+    }
+}
